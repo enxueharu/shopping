@@ -1,0 +1,897 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?kl9lmw');
+    src: url('../fonts/icomoon.eot?kl9lmw#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?kl9lmw') format('truetype'),
+        url('../fonts/icomoon.woff?kl9lmw') format('woff'),
+        url('../fonts/icomoon.svg?kl9lmw#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.main {
+    height: 455px;
+    width: 980px;
+    float: right;
+
+    margin-top: 10px;
+}
+
+.main .focus {
+    height: 455px;
+    width: 721px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.main .focus ul {
+    width: 500%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.main .focus ul li {
+    float: left;
+}
+
+.iconl {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 40px;
+    background-color: #666666;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 180px;
+    display: none;
+    z-index: 1;
+}
+
+.iconr {
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    width: 40px;
+    background-color: #666666;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 180px;
+    display: none;
+}
+
+.iconl:hover {
+    color: white;
+}
+
+.iconr:hover {
+    color: white;
+}
+
+ol {
+    position: absolute;
+    left: 80px;
+    bottom: 20px;
+    background: rgba(0, 0, 0, .5);
+    padding: 2px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+ol li {
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    border: 2px solid white;
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+    background-color: white;
+    opacity: 1;
+
+}
+
+ol .olpoint {
+    background-color: #c81623;
+}
+
+.main .newsflash {
+    width: 250px;
+    height: 455px;
+
+    float: right;
+}
+
+.nf0 {
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+.nf1 {
+    width: 250px;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px dotted #ccc;
+    padding-left: 20px;
+
+}
+
+.nf1 span {
+    float: right;
+    padding-right: 20px;
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.nf1 a::after {
+    content: "\e900";
+    font-family: 'icomoon';
+}
+
+.nf2 {
+    width: 250px;
+    height: 125px;
+    border-bottom: 1px solid #ccc;
+    float: left;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.nf2 h5 {
+    float: left;
+}
+
+.nf2 p {
+    padding-bottom: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 30px;
+}
+
+.nf3 {
+    width: 250px;
+    height: 210px;
+    clear: both;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.nf3 a {
+    width: 62.5px;
+    height: 70px;
+    line-height: 100px;
+    float: left;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    position: relative;
+
+}
+
+
+/* newsflasth 图标模块 */
+.nf3 a:nth-child(1) {
+    background-image: url(../img/icons.png);
+    background-position: 2px -3px;
+}
+
+.nf3 a:nth-child(2) {
+    background-image: url(../img/icons.png);
+    background-position: -61px -3px;
+}
+
+.nf3 a:nth-child(3) {
+    background-image: url(../img/icons.png);
+    background-position: -123px -3px;
+}
+
+.nf3 a:nth-child(4) {
+    background-image: url(../img/icons.png);
+    background-position: -188px -3px;
+}
+
+.nf3 a:nth-child(5) {
+    background-image: url(../img/icons.png);
+    background-position: 2px -74px;
+}
+
+.nf3 a:nth-child(6) {
+    background-image: url(../img/icons.png);
+    background-position: -59px -74px;
+}
+
+.nf3 a:nth-child(7) {
+    background-image: url(../img/icons.png);
+    background-position: -123px -74px;
+}
+
+.nf3 a:nth-child(8) {
+    background-image: url(../img/icons.png);
+    background-position: -188px -74px;
+}
+
+.nf3 a:nth-child(9) {
+    background-image: url(../img/icons.png);
+    background-position: 2px -144px;
+}
+
+.nf3 a:nth-child(10) {
+    background-image: url(../img/icons.png);
+    background-position: -60px -144px;
+}
+
+.nf3 a:nth-child(11) {
+    background-image: url(../img/icons.png);
+    background-position: -122px -144px;
+}
+
+.nf3 a:nth-child(12) {
+    background-image: url(../img/icons.png);
+    background-position: -187px -144px;
+}
+
+
+.nf3 a:nth-of-type(4n) {
+    border-right: hidden;
+}
+
+.nf4 {
+    width: 250px;
+    height: 75px;
+    margin-top: 10px;
+}
+
+/* 推荐模块 */
+.recom {
+    height: 163px;
+    margin-top: 12px;
+}
+
+.recom .recoml {
+    height: 163px;
+    width: 210px;
+    float: left;
+}
+
+.recom .recoml img {
+    width: 100%;
+    height: 100%;
+}
+
+.recom .recomr {
+    height: 163px;
+    background-color: #ebebeb;
+    vertical-align: text-top;
+}
+
+.recom .recomr img {
+    float: right;
+    vertical-align: middle;
+    position: relative;
+    bottom: 110px;
+    right: 15px;
+}
+
+.recom .recomr .firsti1 {
+    position: relative;
+    bottom: 90px;
+    right: 20px;
+}
+
+.recom .recomr li {
+    width: 247.5px;
+    height: 163px;
+    float: left;
+    border-right: 1px solid #dddddd;
+}
+
+.recom .recomr ul:last-child {
+    border-right: 0px;
+}
+
+.recom .recomr i {
+    color: white;
+    font-size: 16px;
+    padding: -1px 2px;
+}
+
+.recom .recomr h4 {
+    font-size: 16px;
+    color: #757575;
+    margin-bottom: 10px;
+}
+
+.recom .recomr p {
+    font-size: 10px;
+    color: #666666;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.recom .recomr .i1 {
+    background-color: #00a0e8;
+}
+
+.recom .recomr .i2 {
+    background-color: #6eb826;
+}
+
+.recom .recomr .i3 {
+    background-color: #e2162f;
+}
+
+.recom .recomr .i4 {
+    background-color: #0085fb;
+}
+
+.recom .recomr .i5 {
+    text-align: center;
+    display: block;
+    width: 60px;
+    border-radius: 50px;
+    padding: -2px;
+    font-size: 14px;
+}
+
+.recom .recomr div {
+    padding: 20px 0 0 25px;
+}
+
+/* recom模块结束 */
+.relike {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    height: 255px;
+
+}
+
+.relike1 {
+    height: 25px;
+    line-height: 25px;
+}
+
+.relike1 h4 {
+    font-size: 16px;
+    float: left;
+}
+
+.relike1 span {
+    float: right;
+    font-size: 14px;
+    padding-right: 30px;
+}
+
+.relike1 span::after {
+    font-family: 'icomoon';
+    content: "\e902";
+    margin-left: 10px;
+}
+
+.relike .relike2 {
+    height: 230px;
+    border: 1px solid #ededed;
+}
+
+.relike .relike2 li {
+    height: 230px;
+    width: 199.6px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.relike .relike2 .rl1 {
+    background-image: url(../upload/rl1.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y: 15px;
+    border-left: 0px;
+
+}
+
+.relike .relike2 .rl2 {
+    background-image: url(../upload/rl2.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y: 30px;
+}
+
+.relike .relike2 .rl3 {
+    background-image: url(../upload/rl3.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y: 15px;
+}
+
+.relike .relike2 .rl4 {
+    background-image: url(../upload/rl4.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y: 60px;
+}
+
+.relike .relike2 .rl5 {
+    background-image: url(../upload/rl5.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y: 25px;
+}
+
+.relike .relike2 .rl6 {
+    background-image: url(../upload/rl6.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y: 25px;
+}
+
+.relike .relike2 div {
+    position: absolute;
+    top: 160px;
+    padding-left: 40px;
+    border-left: 1px solid #ededed;
+}
+
+.relike .relike2 div p {
+    color: black;
+}
+
+.relike .relike2 div h5 {
+    color: red;
+    font-size: 14px;
+}
+
+.relike .relike2 div h5 span {
+    font-size: 12px;
+}
+
+/* relike模块结束 */
+.funnyarea {
+    height: 430px;
+
+}
+
+.fa1 {
+    height: 30px;
+    font-size: 16px;
+    color: #494949;
+}
+
+.fa2 {
+    height: 400px;
+
+}
+
+.fa2 .faa {
+    width: 405px;
+    height: 400px;
+    background-color: #b8bddd;
+    float: left;
+}
+
+.fa2 .faa img {
+    width: 100%;
+    height: 100%;
+}
+
+.fa2 .fab {
+    width: 225px;
+    height: 400px;
+    background-color: #fff;
+    float: left;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.fa2 .fab1 {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 90px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #ededed;
+}
+
+.fa2 .fab2 {
+    height: 205px;
+    border-bottom: 1px solid #ededed;
+    display: block;
+    background-image: url(../upload/fun1.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 65px 0 0 10px;
+
+}
+
+/* fbox样式 */
+.fa2 .fbox h3 {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.fa2 .fbox p,
+h4 {
+    font-size: 12px;
+}
+
+.fa2 .fbox p {
+    color: #333;
+    padding-bottom: 2px;
+}
+
+.fa2 .fbox h4 {
+    color: red;
+    font-size: 14px;
+}
+
+/* fbox样式结束 */
+.fa2 .fab3 {
+    height: 155px;
+    display: block;
+    background-image: url(../upload/fun3.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 40px 0 0 10px;
+    overflow: hidden;
+}
+
+.fac {
+    float: left;
+    width: 405px;
+    height: 400px;
+    background-color: #f7f7f7;
+    border: 1px solid #ededed;
+
+}
+
+.fac .fac1 {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 180px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 1px solid #ededed;
+}
+
+.fac .fac2 {
+    display: block;
+    width: 405px;
+    height: 205px;
+    border-bottom: 1px solid #ededed;
+    background-image: url(../upload/fun2.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 65px 0 0 10px;
+}
+
+.fac .fac3 {
+    display: block;
+    width: 203px;
+    height: 155px;
+    float: left;
+    border-right: 1px solid #ededed;
+    background-image: url(../upload/fun4.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 40px 0 0 10px;
+}
+
+.fac .fac4 {
+    display: block;
+    width: 200px;
+    height: 155px;
+    float: left;
+    background-image: url(../upload/fun5.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    padding: 40px 0 0 10px;
+}
+
+.fad {
+    width: 165px;
+    height: 400px;
+    float: left;
+    border: 1px solid #ededed;
+}
+
+.fad img {
+    width: 100%;
+    height: 100%;
+}
+
+/* funny区结束 */
+.floor1 {
+    margin-top: 30px;
+    height: 390px;
+
+}
+
+.fl1_hd {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 2px solid #c81623;
+
+}
+
+.fl1_hd span {
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+}
+
+.fl1_hd ul {
+    float: right;
+}
+
+.fl1_hd ul li {
+    float: left;
+}
+
+.fl1_hd ul li a {
+    color: #666666;
+    padding: 0 18px;
+    border-right: 1px solid #666666;
+}
+
+.fl1_bd {
+    height: 360px;
+    background-color: #f9f9f9;
+
+}
+
+.fl1a {
+    height: 100px;
+    width: 210px;
+}
+
+.fl1a ul {
+    float: left;
+}
+
+.fl1a li {
+    float: left;
+    width: 86px;
+    height: 35px;
+    line-height: 35px;
+    display: block;
+    text-align: center;
+    border-bottom: 2px solid #ededed;
+    margin-left: 10px;
+
+}
+
+.fl1b {
+    width: 210px;
+    height: 260px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.fl1b p {
+
+    font-size: 18px;
+    color: #c81623;
+}
+
+.fl1b span {
+    font-size: 12px;
+    color: #c81623;
+}
+
+.fl10 {
+    float: left;
+
+}
+
+.fl1c {
+    float: left;
+    height: 360px;
+    width: 330px;
+    background-color: #aed6d8;
+    padding: 38px 0 0 30px;
+}
+
+.fl1c p {
+    font-size: 18px;
+    color: #066c7d;
+    font-weight: bold;
+}
+
+.fl1c span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #066c7d;
+}
+
+.fl1c img {
+    position: relative;
+    left: 20px;
+    top: 30px;
+}
+
+/* fl1font样式 */
+.fl1font {
+    padding: 25px 0 0 16px;
+}
+
+.fl1font p {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+.fl1font span {
+    font-size: 14px;
+    color: #c81623;
+    font-weight: bold;
+}
+
+
+.fl1d {
+    float: left;
+    width: 660px;
+    height: 360px;
+    background-color: white;
+}
+
+.fl1d div {
+    float: left;
+    width: 220px;
+    height: 180px;
+    border-bottom: 1px solid #ededed;
+    border-right: 1px solid #ededed;
+    overflow: hidden;
+}
+
+.fl1font img {
+    float: right;
+}
+
+.fl1d :nth-child(2) {
+    text-align: center;
+    padding-top: 60px;
+}
+
+.fl1d :nth-child(2) p {
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+}
+
+.fl1d :nth-child(2) span {
+    font-size: 14px;
+    color: #a1a1a1;
+    font-weight: bold;
+}
+
+.fl1d :nth-child(5) {
+    padding-top: 30px;
+    text-align: center;
+}
+
+
+.fl1_footer {
+    position: relative;
+    margin-top: 20px;
+    width: 1200px;
+    height: 65px;
+    margin-bottom: 20px;
+}
+
+/* floor底部 */
+.f4 {
+    height: 330px;
+    width: 1200px;
+}
+
+.f4 .f4a {
+    width: 240px;
+    height: 280px;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    float: left;
+}
+
+.f4font1 span {
+    font-size: 14px;
+    color: #c81623;
+    position: relative;
+    top: 60px;
+    left: 28px;
+}
+
+.f4font1 p {
+    font-size: 12px;
+    color: black;
+    position: relative;
+    top: 60px;
+    left: 30px;
+}
+
+.f4_bd .f4a div {
+    width: 240px;
+    height: 140px;
+}
+
+/* f4font样式 */
+.f4font p {
+    font-size: 12px;
+    color: black;
+}
+
+.f4font span {
+    font-size: 14px;
+    color: #c81623;
+}
+
+.f4font img {
+    position: relative;
+    top: 20px;
+}
+
+.f4 .f4_bd .f4b p {
+    position: relative;
+    left: 110px;
+    bottom: 75px;
+}
+
+.f4 .f4_bd .f4b span {
+    position: relative;
+    left: 110px;
+    bottom: 75px;
+}
+
+.f4 .f4_hd {
+    height: 50px;
+    line-height: 50px;
+    color: black;
+    font-size: 18px;
+}
+
+.f4 .f4_bd {
+    width: 1200px;
+    height: 280px;
+    border-top: 1px solid #ededed;
+    border-left: 1px solid #ededed;
+
+}
+
+.f4b {
+    float: left;
+    width: 660px;
+    overflow: hidden;
+}
+
+.f4 .f4b div {
+    height: 140px;
+    width: 220px;
+    float: left;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.f4 .f4c {
+    float: right;
+    width: 299px;
+    height: 280px;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+}
+
+.f4c div {
+    height: 140px;
+    width: 300px;
+    line-height: 140px;
+    padding-left: 20px;
+}
+
+/* floor4结束 */
