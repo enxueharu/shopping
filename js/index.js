@@ -106,5 +106,48 @@ window.addEventListener('load', function () {
         ar.click();
 
     }, 2000);
+    $(function () {
+        var flag = true;
+        var blocksite = $(".recom").offset().top;//显示隐藏电梯栏
+        dianti();
+        function dianti() {
+            if ($(document).scrollTop() >= blocksite) {
+                $(".fixedtool").fadeIn();
+            } else {
+                $(".fixedtool").fadeOut();
+            }
+        }
+
+
+        //滚动条事件
+        $(window).scroll(function () {
+            dianti();
+            
+            //页面滚动实现电梯栏的样式随着页面的滚动条的位置变化
+            if (flag) {
+                $(".lsite").each(function (i,ele) {
+                    if ($(document).scrollTop() >= $(ele).offset().top) {
+                        $(".fixedtool li").eq(i).addClass("special").siblings().removeClass();
+                    }
+                })
+                flag = true;
+            } 
+        })
+
+
+        $(".fixedtool li").click(function () {
+            //$(this).index()电梯区li的索引号
+            flag = false;
+            var docsite = $(".lsite").eq($(this).index()).offset().top;
+            $("body,html").stop().animate({
+                scrollTop:docsite
+            }, function () {
+                flag = true;
+            })
+            
+        // 电梯的样式
+            $(this).addClass("special").siblings().removeClass();
+        })
+    })
 
 })

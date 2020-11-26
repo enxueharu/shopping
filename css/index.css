@@ -895,3 +895,25 @@ h4 {
 }
 
 /* floor4结束 */
+/* 电梯 */
+.fixedtool{
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    margin-left: -676px;
+    width: 66px;
+    background-color: transparent;
+    display: none;
+}
+.fixedtool li{
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+.fixedtool .special{
+    background-color: #c81623;
+    color: #fff;
+}
