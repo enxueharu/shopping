@@ -1,0 +1,186 @@
+.shoppingcar {
+    margin-top:10px!Important;
+}
+.shoph{
+    font-size: 16px;
+    color: #c81623;
+    font-weight: bold;
+    border-bottom: 2px solid #c81623;
+}
+.shopcheck{
+    height: 50px;
+    background-color: #f1f1f1;
+    line-height: 50px;
+    padding-left: 10px;
+    border: 1px solid #f2f2f2;
+    margin-bottom: 20px;
+}
+.shopcheck input{
+    margin-right: 10px;
+}
+.shopcheck .cb1{
+    margin-left: 70px;
+}
+.shopcheck .cb2{
+    margin-left: 450px;
+}
+.shopcheck .cb3{
+    margin-left: 100px;
+}
+.shopcheck .cb4{
+    margin-left: 100px;
+}
+.shopcheck .cb5{
+    margin-left: 70px;
+}
+.shopitem .it1{
+    height: 200px;
+    margin-top: 20px;
+    border-top: 2px solid gray;
+    border-left: 1px solid #f1f1f1;
+    border-right: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    position: relative;
+
+}
+.shopitem input{
+    position: relative;
+    left: 10px;
+    top: 30px;
+    
+}
+.shopitem .shopitemimg{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #f1f1f1;
+    position: absolute;
+    left: 120px;
+}
+.shopitem .shopitemimg img{
+    width: 100%;
+    height: 100%;
+}
+.shopitem p{
+    position: absolute;
+    width: 120px;
+    left: 250px;
+    top: 40px;
+}
+.it1 .unit_price{
+    margin-top: 20px;
+    position: absolute;
+    left: 600px;
+}
+/* 增加商品数量模块 */
+.it1 .d1{
+    width: 100px;
+    height: 32px;
+    border: 1px solid gray;
+    line-height: 32px;
+    position: absolute;
+    left:700px;
+}
+.it1 span{
+    display: block;
+    text-align: center;
+    float: left;
+}
+.it1 .spanmid {
+    display: block;
+    outline: none;
+    border: none;
+    height: 30px;
+    line-height: 30px;
+    width: 42px;
+    float: left;
+    text-align: center;
+    position: relative;
+    top: 0;
+    left:0;
+}
+
+.it1 .spanup,
+.spandown {
+    height: 30px;
+    width: 28px;
+    cursor: pointer;
+}
+
+.it1 .spandown {
+    border-right: 1px solid black;
+}
+
+.it1 .spanup {
+    border-left: 1px solid black;
+}
+/* ****************************************** */
+
+.it1 .sum_price{
+    margin-top: 20px;
+    position: absolute;
+    left: 850px;
+    font-weight: bold;
+}
+.it1 .delete{
+    cursor: pointer;
+    margin-top: 20px;
+    position: absolute;
+    right: 215px;
+}
+.shopitem .result{
+    height: 50px;
+    background-color: #f1f1f1;
+    line-height: 50px;
+    padding-left: 10px;
+    border: 1px solid #f2f2f2;
+    margin-top: 20px;
+    position: relative;
+}
+.shopitem .result span{
+    cursor: pointer;
+}
+.shopitem .result input{
+    margin-right: 10px;
+    position: relative;
+    top: 0;
+    left:0;
+}
+
+.shopitem .result .re6{
+    float: right;
+    width: 80px;
+    background-color: #c81623;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+.shopitem .result .re5{
+    position: absolute;
+    right:100px ;
+    font-size: 16px;
+    color: #c81623;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.shopitem .result .re4{
+    position: absolute;
+    right:165px ;
+    
+}
+.shopitem .result .re3{
+    position: absolute;
+    right:200px ;
+    
+}
+.shopitem .result .re3 span{
+    color: #c81623;
+    font-weight: bold;
+}
+.shopitem .result .re2,
+.re1{
+    margin-left: 55px;
+}
+.shopitem .specialit1{
+    background-color: blanchedalmond;
+}

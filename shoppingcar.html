@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/shoppingcar.css">
+<link rel="stylesheet" href="css/common.css">
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<body>
+    <!-- 快捷导航栏 -->
+    <div class="shortcut ">
+        <div class="w">
+            <div class="scl">
+                <span>
+                    <ul>
+                        <li>品优购欢迎您！</li>
+                        <li> <a href="#">请登录</a></li>
+                        <li> <a href="#" class="style_red">免费注册</a></li>
+                    </ul>
+                </span>
+            </div>
+            <div class="scr">
+                <ul>
+                    <li><a href="https://www.baidu.com">我的订单</a></li>
+                    <li><a href="https://www.baidu.com" class="arrow-icon">我的品优购</a></li>
+                    <li><a href="https://www.baidu.com">品优购会员</a></li>
+                    <li><a href="https://www.baidu.com">企业采购</a></li>
+                    <li><a href="https://www.baidu.com" class="arrow-icon">关注品优购 </a></li>
+                    <li><a href="https://www.baidu.com" class="arrow-icon">客服服务</a></li>
+                    <li><a href="https://www.baidu.com" class="arrow-icon" style="border: none;">网站导航</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 购物车搜索栏 -->
+    <div class="header w">
+        <div class="logo">
+            <h1><a href="index.html" title="品优购首页"><img src="img/logo.png" alt="">品优购</a></h1>
+
+        </div>
+
+        <div class="search">
+            <input type="search" placeholder="请搜索内容...">
+            <button>搜索</button>
+        </div>
+        <div class="hotwords">
+            <ul>
+                <li><a href="#" class="style_red">优惠购首发</a></li>
+                <li><a href="#">亿元优惠</a></li>
+                <li><a href="#">9.9元团购</a></li>
+                <li><a href="#">每满99减30</a></li>
+                <li><a href="#">办公产品</a></li>
+                <li><a href="#">电脑</a></li>
+                <li><a href="#">通信</a></li>
+            </ul>
+        </div>
+        <div class="shopcar">
+            <a href="shoppingcar.html"><span>我的购物车</span></a>
+            <i>&nbsp;80&nbsp;</i>
+        </div>
+    </div>
+    <div class="shoppingcar w">
+        <div class="shoph">全部商品</div>
+        <div class="shopcheck">
+            <span><input type="checkbox" class="checkall">全选</span>
+            <span class="cb1">商品</span>
+            <span class="cb2">单价</span>
+            <span class="cb3">数量</span>
+            <span class="cb4">小计</span>
+            <span class="cb5">操作</span>
+        </div>
+        <div class="shopitem">
+            <div class="it1">
+                <input type="checkbox" class="checkeach">
+                <div class="shopitemimg"><img src="upload/shopitem1.jpg" alt=""></div>
+                <p>【5本26.8元】经典儿童文学彩图青少年版八十天环游地球中学生语文教学大纲</p>
+                <span class="unit_price">￥12.8</span>
+                <div class="d1">
+                    <span class="spandown">-</span>
+                    <input type="text" class="spanmid" value="1">
+                    <span class="spanup">+</span>
+                </div>
+                <span class="sum_price">￥12.8</span>
+                <span class="delete">删除</span>
+            </div>
+            <div class="it1">
+                <input type="checkbox" class="checkeach">
+                <div class="shopitemimg"><img src="upload/shopitem1.jpg" alt=""></div>
+                <p>【5本26.8元】经典儿童文学彩图青少年版八十天环游地球中学生语文教学大纲</p>
+                <span class="unit_price">￥23.3</span>
+                <div class="d1">
+                    <span class="spandown">-</span>
+                    <input type="text" class="spanmid" value="1">
+                    <span class="spanup">+</span>
+                </div>
+                <span class="sum_price">￥23.3</span>
+                <span class="delete">删除</span>
+            </div>
+            <div class="it1">
+                <input type="checkbox" class="checkeach">
+                <div class="shopitemimg"><img src="upload/shopitem1.jpg" alt=""></div>
+                <p>【5本26.8元】经典儿童文学彩图青少年版八十天环游地球中学生语文教学大纲</p>
+                <span class="unit_price">￥33.2</span>
+                <div class="d1">
+                    <span class="spandown">-</span>
+                    <input type="text" class="spanmid" value="1">
+                    <span class="spanup">+</span>
+                </div>
+                <span class="sum_price">￥33.2</span>
+                <span class="delete">删除</span>
+            </div>
+            <div class="result">
+                <span><input type="checkbox" class="checkall">全选</span>
+                <span class="re1">删除选中的商品</span>
+                <span class="re2">清理购物车</span>
+                <span class="re3">您已经选中 <span>3</span> 件商品</span>
+                <span class="re4">总价:</span>
+                <span class="re5">￥12.60</span>
+                <span class="re6">去结算</span>
+            </div>
+            <script>
+                $(function () { //增减商品数量模块
+                    $(".spanup").click(function () {
+                        var n = $(this).siblings(".spanmid").val();
+                        n++;
+                        $(this).siblings(".spanmid").val(n);
+                        //计算价格小计模块
+                        var p = $(this).parent().siblings(".unit_price").html();
+                        p = p.substr(1); //去掉￥符号
+                        // var s = $(this).parent().siblings(".sum_price").html();
+                        // s = s.substr(1);
+                        var result = (n * p).toFixed(2);
+                        $(this).parent().siblings(".sum_price").html("￥" + result);
+                        getSum();
+                    })
+
+                    $(".spandown").click(function () {
+                        var n = $(this).siblings(".spanmid").val();
+
+                        if (n == 1) {
+                            alert('不能再少了');
+                        } else {
+                            n--;
+                            $(this).siblings(".spanmid").val(n);
+                            var p = $(this).parent().siblings(".unit_price").html();
+                            p = p.substr(1); //去掉￥符号
+                            // var s = $(this).parent().siblings(".sum_price").html();
+                            // s = s.substr(1);
+                            var result = (n * p).toFixed(2);
+                            $(this).parent().siblings(".sum_price").html("￥" + result);
+                        }
+                        getSum();
+                    })
+                    //修改表单value值改变小计数值
+                    $(".spanmid").change(function () {
+                        var n = $(this).val();
+                        var p = $(this).parent().siblings(".unit_price").html();
+                        p = p.substr(1);
+                        var result = (n * p).toFixed(2);
+                        $(this).parent().siblings(".sum_price").html("￥" + result);
+                        getSum();
+                    })
+
+                })
+                $(function () { //多选框全选模块
+                    $(".checkall").change(function () {
+                        // $(this).prop("checked") //checked状态
+                        $(".checkeach, .checkall").prop("checked", $(this).prop("checked"));
+                        if ($(this).prop("checked")) {
+                            $(".it1").addClass("specialit1");
+                        } else {
+                            $(".it1").removeClass("specialit1");
+                        }
+                    })
+                    $(".checkeach").change(function () {
+                        if ($(".checkeach:checked").length == $(".checkeach").length) {
+                            $(".checkall").prop("checked", true);
+                        } else {
+                            $(".checkall").prop("checked", false);
+                        }
+                        if ($(this).prop("checked")) {
+                            $(this).parent(".it1").addClass("specialit1");
+                        } else {
+                            $(this).parent(".it1").removeClass("specialit1");
+                        }
+                    })
+                })
+                //添加选中商品背景
+
+                //删除商品
+                //点击删除按钮
+                $(".delete").click(function () {
+                    $(this).parents(".it1").remove();
+                    getSum();
+                })
+                //点击复选框删除
+                $(".re1").click(function () {
+                    $(".checkeach:checked").parent(".it1").remove();
+                    getSum();
+                })
+                //点击清理购物车删除
+                $(".re2").click(function () {
+                    $(".it1").remove();
+                    getSum();
+                })
+                //结算总价
+                getSum();
+
+                function getSum() {
+                    var count = 0;
+                    var money = 0;
+                    $(".spanmid").each(function (i, ele) {
+                        count += parseInt($(ele).val());
+
+                    });
+                    $(".re3 span").text(count);
+
+                    $(".sum_price").each(function (i, ele) {
+                        money += parseFloat($(ele).text().substr(1));;
+
+                    });
+                    $(".re5").text("￥" + money.toFixed(1));
+                }
+            </script>
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="w">
+            <div class="mod_service w">
+                <div>
+                    <ul>
+                        <li>
+                            <i class="icon1"></i>
+                            <div>
+                                <h4>正品保障</h4>
+                                <p>正品保障提供发票</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon2"></i>
+                            <div>
+                                <h4>急速物流</h4>
+                                <p>急速物流，极速送达</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon3"></i>
+                            <div>
+                                <h4>无忧售后</h4>
+                                <p>7天无理由退换货</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon4"></i>
+                            <div>
+                                <h4>特色服务</h4>
+                                <p>正品保障提供发票</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon5"></i>
+                            <div>
+                                <h4>帮助中心</h4>
+                                <p>您的购物中心</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="mod_help w">
+                <dl>
+                    <dt>服务指南</dt>
+                    <dd>
+                        <a href="#">购物流程</a>
+                    </dd>
+                    <dd>
+                        <a href="#">会员介绍</a>
+                    </dd>
+                    <dd>
+                        <a href="#">生活旅行/团购</a>
+                    </dd>
+                    <dd>
+                        <a href="#">常见问题</a>
+                    </dd>
+                    <dd>
+                        <a href="#">大家电</a>
+                    </dd>
+                    <dd>
+                        <a href="#">联系客服</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>配送方式</dt>
+                    <dd>
+                        <a href="#">上门自提</a>
+                    </dd>
+                    <dd>
+                        <a href="#">211限时达</a>
+                    </dd>
+                    <dd>
+                        <a href="#">配送服务查询</a>
+                    </dd>
+                    <dd>
+                        <a href="#">配送费收取标准</a>
+                    </dd>
+                    <dd>
+                        <a href="#">海外配送</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd>
+                        <a href="#">货到付款</a>
+                    </dd>
+                    <dd>
+                        <a href="#">在线支付</a>
+                    </dd>
+                    <dd>
+                        <a href="#">分期付款</a>
+                    </dd>
+                    <dd>
+                        <a href="#">邮局汇款</a>
+                    </dd>
+                    <dd>
+                        <a href="#">公司转账</a>
+                    </dd>
+
+                </dl>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd>
+                        <a href="#">售后政策</a>
+                    </dd>
+                    <dd>
+                        <a href="#">价格保护</a>
+                    </dd>
+                    <dd>
+                        <a href="#">退款说明</a>
+                    </dd>
+                    <dd>
+                        <a href="#">返修/退换货</a>
+                    </dd>
+                    <dd>
+                        <a href="#">取消订单</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>特色服务</dt>
+                    <dd>
+                        <a href="#">夺宝岛</a>
+                    </dd>
+                    <dd>
+                        <a href="#">DIY装机</a>
+                    </dd>
+                    <dd>
+                        <a href="#">延保服务</a>
+                    </dd>
+                    <dd>
+                        <a href="#">品优购E卡</a>
+                    </dd>
+                    <dd>
+                        <a href="#">品优购通信</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <img src="img/erweima.png" alt="">
+                    </dd>
+                    <dd>
+                        品优购客户端
+                    </dd>
+
+                </dl>
+
+            </div>
+            <div class="mod_copyright">
+                <p><a href="#">关于我们</a> |
+                    <a href="#">联系我们</a> |
+                    <a href="#">联系客服</a> |
+                    <a href="#">商家入驻</a> |
+                    <a href="#">营销中心</a> |
+                    <a href="#">手机品优购</a> |
+                    <a href="#">友情链接</a> |
+                    <a href="#">销售联盟</a> |
+                    <a href="#">品优购社区</a> |
+                    <a href="#">品优购公益</a> |
+                    <a href="#">English Site</a> |
+                    <a href="#">Contact U</a></p>
+                <p>地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn<br>
+                    京ICP备08001421号京公网安备110108007702</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    document.body.parentNode.style.overflowX = 'hidden';
+</script>
+
+</html>
