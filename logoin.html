@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/base.css">
+<script src="js/jquery-3.5.1.min.js"></script>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<style>
+    .head {
+        border-bottom: 3px solid #c81623;
+    }
+
+    .login {
+        margin-top: 30px;
+        border: 1px solid gray;
+    }
+
+    .loginh {
+        border-bottom: 1px solid gray;
+        height: 40px;
+        line-height: 30px;
+        font-size: 16px;
+        background-color: #f1f1f1;
+        padding: 5px;
+        padding-left: 10px;
+        color: gray;
+    }
+
+    ul {
+        list-style: none;
+
+    }
+
+    .loginsite {
+        float: right;
+        font-size: 12px;
+    }
+
+    .loginsite a {
+        color: #c81623;
+    }
+
+    .loginb {
+        height: 522px;
+    }
+
+    .logbox {
+        width: 600px;
+        margin: 50px auto;
+        position: relative;
+    }
+
+    .logbox label {
+        display: inline-block;
+        width: 88px;
+        text-align: right;
+    }
+
+    .logbox li input {
+
+        margin: 0 20px;
+        width: 242px;
+        height: 37px;
+        outline: none;
+        border: 2px solid #ccc;
+
+    }
+
+    .logbox li {
+        margin-bottom: 10px;
+        line-height: 37px;
+    }
+
+    .logbox .passt {
+        position: relative;
+        left: 200px;
+    }
+
+    .logbox .passt1 {
+        background-color: red;
+    }
+
+    .logbox .passt2 {
+        background-color: goldenrod;
+    }
+
+    .logbox .passt3 {
+        background-color: green;
+
+    }
+
+    .logbox .passt1,
+    .passt2,
+    .passt3 {
+        color: white;
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        width: 30px;
+        text-align: center;
+    }
+
+    .error {
+        color: red;
+        font-weight: bold;
+
+    }
+
+    .right {
+        color: green;
+        font-weight: bold;
+    }
+
+    .check {
+        margin-top: 50px;
+        position: relative;
+        left: 85px;
+
+    }
+
+    .checkbox {
+        margin-right: 10px;
+        position: relative;
+        top: 2px;
+    }
+
+    .check span a {
+        color: skyblue !important;
+    }
+
+    .verc {
+        color: slategray;
+    }
+
+    button {
+        width: 210px;
+        height: 35px;
+        line-height: 35px;
+        background-color: #c81623;
+        color: white;
+        text-align: center;
+        outline: none;
+        border: none;
+        margin: 20px 100px;
+    }
+</style>
+
+<body>
+    <div class="head w">
+        <a href="index.html"> <img src="img/logo.png" alt=""></a>
+    </div>
+    <div class="login w">
+        <div class="loginh">
+            <span>注册新用户</span>
+            <span class="loginsite">我有账号,去<a href="#">登录</a></span>
+        </div>
+        <div class="loginb">
+            <div class="logbox">
+                <ul>
+                    <li><label for="">手机号:</label><input type="tel" id="tel"><span class="verc">请输入手机号</span></li>
+                    <li><label>QQ:</label><input type="text" id="qq"><span class="verc">请输入QQ号</span></li>
+                    <li><label>用户名:</label><input type="text" id="uname"><span class="verc">请输入用户名</span></li>
+                    <li> <label>短信验证码:</label><input type="text" id="news"><span class="verc">请输入验证码</span></li>
+                    <li><label>登录密码:</label><input type="password" id="fpsw"><span class="verc">请输入密码</span></li>
+                    <li><span class="passt">安全强度
+                            <span class="passt1">弱</span>
+                            <spa class="passt2">中</spa>
+                            <span class="passt3">强</span>
+                        </span></li>
+                    <li><label>确认密码:</label><input type="password" id="lpsw"><span class="verc">请再次输入密码</span></li>
+                    <div class="check">
+                        <input type="checkbox" class="checkbox"><span>同意协议并注册<a href="#">《用户协议》</a></span>
+                    </div>
+                </ul>
+                <button>完成注册</button>
+            </div>
+            <script>
+                var regtel = /^(13[0-9]|14[5[7]]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+                var regqq = /[1-9][0-9]{4,}/;
+                var reguname = /^[a-zA-Z][a-zA-Z0-9_]{4,15}$/;
+                var regnews = /^[0-9a-zA-Z]{4}$/;
+                var regfpsw = /^[a-zA-Z]\w{6,16}$/;
+                var reglpsw = /^[a-zA-Z]\w{6,16}$/;
+
+                var tel = document.querySelector('#tel');
+                var qq = document.querySelector('#qq');
+                var uname = document.querySelector('#uname');
+                var news = document.querySelector('#news');
+                var fpsw = document.querySelector('#fpsw');
+                var lpsw = document.querySelector('#lpsw');
+
+                tel.addEventListener('blur', function () {
+                    if (!(regtel.test(this.value))) {
+                        this.nextElementSibling.innerHTML = '<span>请输入正确的手机号</span>';
+                        this.nextElementSibling.className = 'error';
+
+                    } else if (this.value == '') {
+                        this.nextElementSibling.innerHTML = '<span>请输入手机号</span>';
+                        this.nextElementSibling.className = 'error';
+                    } else {
+                        this.nextElementSibling.innerHTML = '<span >输入的手机号正确</span>';
+                        this.nextElementSibling.className = 'right';
+                    }
+                })
+                qq.addEventListener('blur', function () {
+                    if (!(regqq.test(this.value))) {
+                        this.nextElementSibling.innerHTML = '<span>请输入正确的QQ号</span>';
+                        this.nextElementSibling.className = 'error';
+
+                    } else if (this.value == '') {
+                        this.nextElementSibling.innerHTML = '<span>请输入QQ号</span>';
+                        this.nextElementSibling.className = 'error';
+                    } else {
+                        this.nextElementSibling.innerHTML = '<span>输入的QQ号正确</span>';
+                        this.nextElementSibling.className = 'right';
+                    }
+                })
+                uname.addEventListener('blur', function () {
+                    if (!(reguname.test(this.value))) {
+                        this.nextElementSibling.innerHTML = '<span>请输入正确的用户名</span>';
+                        this.nextElementSibling.className = 'error';
+
+                    } else if (this.value == '') {
+                        this.nextElementSibling.innerHTML = '<span>请输入用户名</span>';
+                        this.nextElementSibling.className = 'error';
+                    } else {
+                        this.nextElementSibling.innerHTML = '<span>输入的用户名正确</span>';
+                        this.nextElementSibling.className = 'right';
+                    }
+                })
+                news.addEventListener('blur', function () {
+                    if (!(regnews.test(this.value))) {
+                        this.nextElementSibling.innerHTML = '<span>请输入正确的验证码</span>';
+                        this.nextElementSibling.className = 'error';
+
+                    } else if (this.value == '') {
+                        this.nextElementSibling.innerHTML = '<span>请输入验证码</span>';
+                        this.nextElementSibling.className = 'error';
+                    } else {
+                        this.nextElementSibling.innerHTML = '<span>输入的验证码正确</span>';
+                        this.nextElementSibling.className = 'right';
+                    }
+                })
+                fpsw.addEventListener('blur', function () {
+
+                    if (!(regfpsw.test(this.value))) {
+                        this.nextElementSibling.innerHTML = '<span>请输入正确的密码</span>';
+                        this.nextElementSibling.className = 'error';
+
+                    } else if (this.value == '') {
+                        this.nextElementSibling.innerHTML = '<span>请输入密码</span>';
+                        this.nextElementSibling.className = 'error';
+                    } else {
+                        this.nextElementSibling.innerHTML = '<span>输入的密码正确</span>';
+                        this.nextElementSibling.className = 'right';
+                    }
+                })
+                lpsw.addEventListener('blur', function () {
+                    if (!(this.value == fpsw.value)) {
+                        this.nextElementSibling.innerHTML = '<span>请输入正确的密码</span>';
+                        this.nextElementSibling.className = 'error';
+
+                    } else if (this.value == '') {
+                        this.nextElementSibling.innerHTML = '<span>请输入密码</span>';
+                        this.nextElementSibling.className = 'error';
+                    } else {
+                        this.nextElementSibling.innerHTML = '<span>输入的密码正确</span>';
+                        this.nextElementSibling.className = 'right';
+                    }
+                })
+            </script>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="w">
+            <div class="mod_service w">
+                <div>
+                    <ul>
+                        <li>
+                            <i class="icon1"></i>
+                            <div>
+                                <h4>正品保障</h4>
+                                <p>正品保障提供发票</p>
+
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon2"></i>
+                            <div>
+                                <h4>急速物流</h4>
+                                <p>急速物流，极速送达</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon3"></i>
+                            <div>
+                                <h4>无忧售后</h4>
+                                <p>7天无理由退换货</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon4"></i>
+                            <div>
+                                <h4>特色服务</h4>
+                                <p>正品保障提供发票</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="icon5"></i>
+                            <div>
+                                <h4>帮助中心</h4>
+                                <p>您的购物中心</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="mod_help w">
+                <dl>
+                    <dt>服务指南</dt>
+                    <dd>
+                        <a href="#">购物流程</a>
+                    </dd>
+                    <dd>
+                        <a href="#">会员介绍</a>
+                    </dd>
+                    <dd>
+                        <a href="#">生活旅行/团购</a>
+                    </dd>
+                    <dd>
+                        <a href="#">常见问题</a>
+                    </dd>
+                    <dd>
+                        <a href="#">大家电</a>
+                    </dd>
+                    <dd>
+                        <a href="#">联系客服</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>配送方式</dt>
+                    <dd>
+                        <a href="#">上门自提</a>
+                    </dd>
+                    <dd>
+                        <a href="#">211限时达</a>
+                    </dd>
+                    <dd>
+                        <a href="#">配送服务查询</a>
+                    </dd>
+                    <dd>
+                        <a href="#">配送费收取标准</a>
+                    </dd>
+                    <dd>
+                        <a href="#">海外配送</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>支付方式</dt>
+                    <dd>
+                        <a href="#">货到付款</a>
+                    </dd>
+                    <dd>
+                        <a href="#">在线支付</a>
+                    </dd>
+                    <dd>
+                        <a href="#">分期付款</a>
+                    </dd>
+                    <dd>
+                        <a href="#">邮局汇款</a>
+                    </dd>
+                    <dd>
+                        <a href="#">公司转账</a>
+                    </dd>
+
+                </dl>
+                <dl>
+                    <dt>售后服务</dt>
+                    <dd>
+                        <a href="#">售后政策</a>
+                    </dd>
+                    <dd>
+                        <a href="#">价格保护</a>
+                    </dd>
+                    <dd>
+                        <a href="#">退款说明</a>
+                    </dd>
+                    <dd>
+                        <a href="#">返修/退换货</a>
+                    </dd>
+                    <dd>
+                        <a href="#">取消订单</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>特色服务</dt>
+                    <dd>
+                        <a href="#">夺宝岛</a>
+                    </dd>
+                    <dd>
+                        <a href="#">DIY装机</a>
+                    </dd>
+                    <dd>
+                        <a href="#">延保服务</a>
+                    </dd>
+                    <dd>
+                        <a href="#">品优购E卡</a>
+                    </dd>
+                    <dd>
+                        <a href="#">品优购通信</a>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <img src="img/erweima.png" alt="">
+                    </dd>
+                    <dd>
+                        品优购客户端
+                    </dd>
+
+                </dl>
+
+            </div>
+            <div class="mod_copyright">
+                <p><a href="#">关于我们</a> |
+                    <a href="#">联系我们</a> |
+                    <a href="#">联系客服</a> |
+                    <a href="#">商家入驻</a> |
+                    <a href="#">营销中心</a> |
+                    <a href="#">手机品优购</a> |
+                    <a href="#">友情链接</a> |
+                    <a href="#">销售联盟</a> |
+                    <a href="#">品优购社区</a> |
+                    <a href="#">品优购公益</a> |
+                    <a href="#">English Site</a> |
+                    <a href="#">Contact U</a></p>
+                <p>地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn<br>
+                    京ICP备08001421号京公网安备110108007702</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
